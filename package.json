@@ -1,7 +1,26 @@
 {
-  "name": "weekly",
+  "name": "dobby",
   "version": "0.1.0",
+  "author": "nüenberg",
   "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "description": "Weekly Report System",
+  "homepage": "https://github.com/project-dobby/dobby-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project-dobby/dobby-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/project-dobby/dobby-web/issues"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -x @commitlint/config-conventional -E GIT_PARAMS"
+  },
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -44,10 +63,12 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -91,17 +112,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cnabro/weeki.git"
-  },
-  "author": "nüenberg",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cnabro/weeki/issues"
-  },
-  "homepage": "https://github.com/cnabro/weeki#readme"
+  "lint-staged": {
+    "*.{js,jsx,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }

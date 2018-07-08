@@ -1,7 +1,7 @@
 {
   "name": "dobby",
   "version": "0.1.0",
-  "author": "nüenberg",
+  "author": "project-dobby",
   "private": true,
   "license": "MIT",
   "main": "index.js",

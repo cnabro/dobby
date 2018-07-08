@@ -93,7 +93,10 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cnabro/weeki.git"

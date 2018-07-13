@@ -46,7 +46,6 @@
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
-    "jest": "20.0.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -70,6 +69,7 @@
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
     "husky": "^0.14.3",
+    "jest": "^23.4.0",
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.7"
   },
@@ -95,7 +95,8 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-native$": "react-native-web",
+      "^src(.*)$": "<rootDir>/src/$1"
     },
     "moduleFileExtensions": [
       "web.js",

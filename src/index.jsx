@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "src/index.css";
 import App from "src/components/App";
-import registerServiceWorker from "src/registerServiceWorker";
 
-ReactDOM.render(<App />, document.getElementById("root"));
-registerServiceWorker();
+const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate;
+
+renderMethod(<App />, document.getElementById("root"));

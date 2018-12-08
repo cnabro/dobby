@@ -1,19 +1,46 @@
-import React from "react";
-import logo from "src/logo.svg";
-import "src/components/App.css";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <p className="App-intro">
-      To get started, edit
-      <code>src/App.js</code>
-      and save to reload.
-    </p>
-  </div>
-);
+class App extends Component {
+  static fetchData() {
+    return "api data";
+  }
+
+  constructor(props) {
+    super(props);
+    let { data } = props;
+    const initialData =
+      typeof window !== "undefined" && window.INITIAL_STATE
+        ? window.INITIAL_STATE
+        : null;
+
+    if (!data) {
+      data = initialData || null;
+    }
+
+    this.state = { data };
+  }
+
+  componentWillMount() {
+    const { data } = this.props;
+
+    if (!data) {
+      this.setState({ data: App.fetchData() });
+    }
+  }
+
+  render() {
+    const { data } = this.state;
+
+    return <div className="App">{data}</div>;
+  }
+}
+App.defaultProps = {
+  data: ""
+};
+
+App.propTypes = {
+  data: PropTypes.string
+};
 
 export default App;

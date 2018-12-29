@@ -20,7 +20,7 @@
     "server:start": "NODE_ENV=development babel-node src/server --presets env,react-app",
     "test": "node scripts/test.js --env=jsdom",
     "precommit": "lint-staged",
-    "lint": "eslint src",
+    "lint": "eslint src --fix",
     "commitmsg": "commitlint -x @commitlint/config-conventional -E GIT_PARAMS"
   },
   "dependencies": {
@@ -130,8 +130,8 @@
     "extends": "react-app"
   },
   "lint-staged": {
-    "*.{js,jsx,json}": [
-      "prettier --write",
+    "*.{js,jsx}": [
+      "yarn lint",
       "git add"
     ]
   }

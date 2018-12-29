@@ -20,7 +20,7 @@
     "server:start": "NODE_ENV=development babel-node src/server --presets env,react-app",
     "test": "node scripts/test.js --env=jsdom",
     "precommit": "lint-staged",
-    "lint": "eslint src",
+    "lint": "eslint src --fix",
     "commitmsg": "commitlint -x @commitlint/config-conventional -E GIT_PARAMS"
   },
   "dependencies": {
@@ -56,8 +56,11 @@
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-thunk": "^1.0.0",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -127,8 +130,8 @@
     "extends": "react-app"
   },
   "lint-staged": {
-    "*.{js,jsx,json}": [
-      "prettier --write",
+    "*.{js,jsx}": [
+      "yarn lint",
       "git add"
     ]
   }

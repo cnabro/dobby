@@ -8,12 +8,13 @@ module.exports = {
   parserPreset: {
     parserOpts: {
       headerPattern: /^(:(?:\w+):) (.*)$/,
-      headerCorrespondence: ["type", "scope", "ticket", "subject"]
-    }
+      headerCorrespondence: ["type", "scope", "ticket", "subject"],
+    },
   },
   rules: {
+    "scope-case": [0, "never"],
     "subject-empty": [0, "always"],
     "type-empty": [2, "never"],
-    "type-enum": [2, "always", commitType.gitmojis.map(v => v.code)]
-  }
+    "type-enum": [2, "always", commitType.gitmojis.map(v => v.code)],
+  },
 };

@@ -85,7 +85,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: [".web.js", ".mjs", ".js", ".json", ".web.jsx", ".jsx"],
+    extensions: [".ts", "tsx", ".js", ".json"],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -111,7 +111,7 @@ module.exports = {
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
       {
-        test: /\.(js|jsx|mjs)$/,
+        test: /\.(js|ts|tsx|mjs)$/,
         enforce: "pre",
         use: [
           {
@@ -141,7 +141,7 @@ module.exports = {
           },
           // Process JS with Babel.
           {
-            test: /\.(js|jsx|mjs)$/,
+            test: /\.(js|ts|tsx|mjs)$/,
             include: paths.appSrc,
             loader: require.resolve("babel-loader"),
             options: {
@@ -217,7 +217,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|ts|tsx|mjs)$/, /\.html$/, /\.json$/],
             options: {
               name: "static/media/[name].[hash:8].[ext]"
             }

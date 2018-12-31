@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import postState from "./components/post/reducer";
+import post from "src/store/post/post.ducks";
 
 export default combineReducers({
-  postState,
+  post,
 });

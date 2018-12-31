@@ -1,7 +1,12 @@
 import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
 
-class PostItem extends PureComponent {
+type Props = {
+  post: {
+    title: string
+  }
+};
+
+class PostItem extends PureComponent<Props> {
   render() {
     const { post } = this.props;
 
@@ -12,13 +17,5 @@ class PostItem extends PureComponent {
     );
   }
 }
-
-PostItem.defaultProps = {
-  post: {},
-};
-
-PostItem.propTypes = {
-  post: PropTypes.instanceOf(Object),
-};
 
 export default PostItem;

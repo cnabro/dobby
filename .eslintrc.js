@@ -1,7 +1,7 @@
-{
-  "extends": "./config/eslint-rules/index.js",
-  "rules": {
-    "quotes": [
+module.exports = {
+  extends: "./config/eslint-rules/index.js",
+  rules: {
+    quotes: [
       "error",
       "double"
     ],
@@ -17,11 +17,11 @@
       }
     ]
   },
-  "settings": {
+  settings: {
     "import/resolver": {
-      "webpack": {
-        "config": "config/webpack.config.dev.js"
+      webpack: {
+        config: "config/webpack.config.dev.js"
       }
     }
   }
-}
+};

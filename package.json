@@ -21,6 +21,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "precommit": "lint-staged",
     "lint": "eslint ./ --fix",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "commitmsg": "commitlint -x @commitlint/config-conventional -E GIT_PARAMS"
   },
   "dependencies": {
@@ -130,8 +131,12 @@
     ]
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{js}": [
       "yarn lint",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "yarn tslint",
       "git add"
     ]
   }

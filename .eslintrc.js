@@ -1,10 +1,10 @@
 module.exports = {
   extends: "airbnb",
-  env: {
-    browser: true
-  },
   rules: {
-    quotes: ["error", "double"]
+    quotes: [
+      "error",
+      "double"
+    ]
   },
   settings: {
     "import/resolver": {

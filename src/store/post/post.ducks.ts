@@ -13,7 +13,7 @@ export function getList() {
   };
 }
 
-const postReducer = (state = initialState, action: any) => {
+export default (state = initialState, action: any) => {
   switch (action.type) {
     case ActionType.SET_LIST:
       return {
@@ -25,5 +25,3 @@ const postReducer = (state = initialState, action: any) => {
       return state;
   }
 };
-
-export default postReducer;

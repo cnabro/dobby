@@ -1,8 +1,8 @@
 /* eslint no-underscore-dangle: 0 */
 
-import { put, call, takeEvery } from "redux-saga/effects";
 import axios from "axios";
-import { ActionType } from "./post.ducks";
+import { call, put, takeEvery } from "redux-saga/effects";
+import { ActionType } from "src/store/post/post.ducks";
 
 export function* getList() {
   const result = yield call(() => axios.get("http://220.230.125.73/api/posts"));

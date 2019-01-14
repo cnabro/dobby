@@ -1,20 +1,9 @@
 module.exports = {
-  extends: "./config/eslint-rules/index.js",
+  extends: "airbnb",
   rules: {
     quotes: [
       "error",
       "double"
-    ],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
     ]
   },
   settings: {

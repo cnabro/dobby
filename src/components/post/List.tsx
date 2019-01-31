@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getList } from "src/store/post/post.ducks";
 import PostItem from "src/components/post/Item";
+import { RouteComponentProps } from "react-router-dom";
 
 type PostType = {
   id: string;
   title: string
 };
 
-type Props = {
-  getListAsync: () => any;
-  list: PostType[]
+type Params = {
+  project: string;
 };
+
+type Props = {
+  getListAsync: (proejct: string) => any;
+  list: PostType[]
+} & RouteComponentProps<Params>;
 
 class PostList extends Component<Props> {
   componentDidMount() {
-    const { getListAsync } = this.props;
-
-    getListAsync();
+    const { getListAsync, match: { params: { project } } } = this.props;
+    getListAsync(project);
   }
 
   render() {
